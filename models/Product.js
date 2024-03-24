@@ -24,6 +24,13 @@ Product.init(
     inStock: {
       type: DataTypes.BOOLEAN,
     },
+    category_id: {
+      type: DataTypes.INTEGER,
+      refrences: {
+        model: 'category',
+        key: 'id'
+      }
+    },
   },
   {
     sequelize,
@@ -32,6 +39,7 @@ Product.init(
     underscored: true,
     modelName: 'product',
   }
+  
 );
 
 module.exports = Product;
